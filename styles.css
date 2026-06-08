@@ -1,0 +1,163 @@
+@font-face {
+  font-family: 'Neue Haas Grotesk Display Pro';
+  src: url('fonts/NeueHaasDisplay-Roman.woff2') format('woff2');
+  font-weight: 400;
+  font-style: normal;
+  font-display: block;
+}
+
+@font-face {
+  font-family: 'Neue Haas Grotesk Display Pro';
+  src: url('fonts/NeueHaasDisplay-Mediu.woff2') format('woff2');
+  font-weight: 500;
+  font-style: normal;
+  font-display: block;
+}
+
+@font-face {
+  font-family: 'Neue Haas Grotesk Display Pro';
+  src: url('fonts/NeueHaasDisplay-Bold.woff2') format('woff2');
+  font-weight: 700;
+  font-style: normal;
+  font-display: block;
+}
+
+:root {
+  --color-dark-text: #05152a;
+  --color-dark-bg: #21344C;
+  --color-light: #ffffff;
+  --color-light-transp: rgba(255, 255, 255, 0.6);
+  --color-gray-bg: #f5f7f9;
+  --color-accent: #c49a6c;
+
+  --font-family-base: 'Neue Haas Grotesk Display Pro', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+
+  --container-padding-x: 20px;
+  --transition-duration: 0.2s;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  height: 100%;
+}
+
+body {
+  font-family: var(--font-family-base);
+  background-color: var(--color-dark-bg);
+  color: var(--color-light);
+}
+
+.stub {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--container-padding-x);
+  background-image: url('images/bg.webp');
+  background-size: cover;
+  background-position: center;
+}
+
+.stub::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(5, 21, 42, 0.65), rgba(33, 52, 76, 0.85));
+}
+
+.stub__inner {
+  position: relative;
+  z-index: 1;
+}
+
+.stub__inner {
+  max-width: 640px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.stub__logo {
+  display: inline-block;
+  width: 128px;
+  margin-bottom: 40px;
+}
+
+.stub__logo svg {
+  width: 100%;
+  height: auto;
+  fill: var(--color-light);
+}
+
+.stub__title {
+  font-size: clamp(28px, 5vw, 64px);
+  font-weight: 500;
+  line-height: 1.2;
+  letter-spacing: -0.02em;
+  margin-bottom: 24px;
+}
+
+.stub__text {
+  font-size: 20px;
+  line-height: 1.6;
+  color: var(--color-light-transp);
+  margin-bottom: 32px;
+}
+
+.stub__email {
+  display: inline-block;
+  font-size: 18px;
+  font-weight: 500;
+  color: var(--color-accent);
+  text-decoration: none;
+  border-bottom: 1px solid transparent;
+  transition: border-color var(--transition-duration) ease;
+  margin-bottom: 40px;
+}
+
+.stub__email:hover {
+  border-color: var(--color-accent);
+}
+
+.stub__socials {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  list-style: none;
+}
+
+.stub__socials a {
+  display: inline-flex;
+  color: var(--color-light-transp);
+  transition: color var(--transition-duration) ease;
+}
+
+.stub__socials a:hover {
+  color: var(--color-accent);
+}
+
+@media (max-width: 768px) {
+  .stub__logo {
+    width: 48px;
+    margin-bottom: 28px;
+  }
+
+  .stub__title {
+    margin-bottom: 16px;
+  }
+
+  .stub__text {
+    margin-bottom: 24px;
+  }
+
+  .stub__email {
+    margin-bottom: 28px;
+  }
+}
